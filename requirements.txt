@@ -2,6 +2,8 @@ flask
 gunicorn
 requests
 PyPDF2
+python-docx
 flask_sqlalchemy
+
 
 
