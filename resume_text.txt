@@ -1,0 +1,46 @@
+Vijay Kumar Dandu
+Software Engineer
+Hyderabad, India — danduvijaykumar841@gmail.com — 7981003902 — LinkedIn — GitHub
+PROFESSIONAL SUMMARY
+Fresher Software Engineer with a strong foundation in software engineering, Python development, and full SDLC
+execution. Hands-on experience designing, building, testing, and deploying data-driven applications through aca-
+demic projects. Strong problem-solving skills with exposure to backend development, machine learning, and
+software best practices.
+TECHNICAL SKILLS
+Programming & Scripting:Python, SQL
+Software Engineering:SDLC, Object-Oriented Programming (OOP), Requirements Analysis, Debugging, Test-
+ing, Code Optimization
+Data & Machine Learning:Pandas, NumPy, scikit-learn
+Frameworks & Tools:Django, Tkinter, Git, GitHub, MySQL
+ENGINEERING PROJECTS
+AI-Based Crime Analysis & Prediction SystemApr 2025 – Aug 2025
+Python, Pandas, scikit-learn, Django, SQL
+•Engineered an end-to-end machine learning pipeline covering data ingestion, preprocessing, model training,
+testing, and deployment
+•Processed and validated 50,000+ structured and unstructured records across multiple relational tables, im-
+proving data accuracy by approximately 35%
+•Designed and evaluated machine learning models including Na¨ ıve Bayes, Logistic Regression, Decision Tree,
+SVM, and Random Forest
+•Improved prediction performance by 10–15% using ensemble learning techniques such as Voting Classifier
+•Integrated trained models into a Django-based web application for real-time prediction and visualization
+•Followed SDLC best practices, including requirement analysis, implementation, testing, and enhancement
+Hotel Management SystemOct 2025 – Nov 2025
+Python, Tkinter, Object-Oriented Programming
+•Designed and developed a customer-centric desktop application to automate hotel check-in and check-out
+workflows
+•Reduced manual record handling by approximately 90% through automation and structured data processing
+•Implemented input validation and duplicate detection to improve system reliability and data integrity
+•Applied object-oriented design principles to build a modular, maintainable, and scalable codebase
+•Delivered a fully functional solution covering design, development, testing, and enhancement phases
+EDUCATION
+Master of Computer Applications (MCA)Nov 2023 – Oct 2025
+Sai Sudhir PG College, Hyderabad
+Percentage: 82%
+Bachelor of Science – Data ScienceMar 2020 – Jul 2023
+Government City College, Hyderabad
+Percentage: 88%
+CERTIFICATIONS
+Python Fundamentals – GUVI
+SQL & Database Design
+Google AI Essentials – Coursera
+1

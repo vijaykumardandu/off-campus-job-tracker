@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Analytics Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+
+        .card {
+            width: 220px;
+            padding: 25px;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .total {
+            background: #2c3e50;
+        }
+
+        .applied {
+            background: #3498db;
+        }
+
+        .interview {
+            background: #27ae60;
+        }
+
+        .rejected {
+            background: #e74c3c;
+        }
+
+        .nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>📊 Job Analytics Dashboard</h1>
+
+<div class="dashboard">
+
+    <div class="card total">
+        Total Applications
+        <br><br>
+        {{ total }}
+    </div>
+
+    <div class="card applied">
+        Applied
+        <br><br>
+        {{ applied }}
+    </div>
+
+    <div class="card interview">
+        Interviews
+        <br><br>
+        {{ interview }}
+    </div>
+
+    <div class="card rejected">
+        Rejected
+        <br><br>
+        {{ rejected }}
+    </div>
+
+</div>
+
+<div class="nav">
+    <a href="/">🏠 Home</a>
+    |
+    <a href="/applications">📂 Applications</a>
+</div>
+
+</body>
+</html>

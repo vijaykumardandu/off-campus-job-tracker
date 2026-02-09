@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - The Off-Campus{% endblock %}
+
+{% block content %}
+
+<h1>The Off-Campus – Auto Job Application</h1>
+
+<!-- ===== SEARCH JOBS ===== -->
+<div class="card">
+    <h2>Search Jobs</h2>
+
+    <form method="POST" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <input
+            type="text"
+            name="keyword"
+            placeholder="Keyword"
+            required
+            style="padding:8px; width:220px;"
+        >
+
+        <input
+            type="text"
+            name="location"
+            placeholder="Location"
+            required
+            style="padding:8px; width:220px;"
+        >
+
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+
+<!-- ===== JOB LISTINGS ===== -->
+<h2 style="margin-top:30px;">Job Listings</h2>
+
+{% for job in jobs %}
+<div class="card">
+
+    <!-- JOB TITLE -->
+    <h3>{{ job.title }}</h3>
+
+    <!-- COMPANY -->
+    <p><strong>Company:</strong> {{ job.company }}</p>
+
+    <!-- MATCH SCORE -->
+    {% if job.score >= 70 %}
+        <span class="badge green">Recommended · {{ job.score }}%</span>
+    {% elif job.score >= 40 %}
+        <span class="badge yellow">Medium Match · {{ job.score }}%</span>
+    {% else %}
+        <span class="badge red">Low Match · {{ job.score }}%</span>
+    {% endif %}
+
+    <br><br>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+        <a href="{{ job.url }}" target="_blank" class="btn btn-outline">Apply</a>
+
+        <form action="/save" method="POST" style="display:inline;">
+            <input type="hidden" name="title" value="{{ job.title }}">
+            <input type="hidden" name="company" value="{{ job.company }}">
+            <input type="hidden" name="link" value="{{ job.url }}">
+            <input type="hidden" name="score" value="{{ job.score }}">
+
+            <button type="submit" class="btn btn-primary">Save Job</button>
+        </form>
+    </div>
+
+</div>
+{% else %}
+<p>No jobs found.</p>
+{% endfor %}
+
+{% endblock %}

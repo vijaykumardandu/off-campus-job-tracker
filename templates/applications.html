@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Applications - The Off-Campus{% endblock %}
+
+{% block content %}
+
+<h1>Applications Tracker</h1>
+
+<!-- ================= FILTER FORM ================= -->
+<form method="GET" style="margin-bottom:20px; display:flex; gap:12px; flex-wrap:wrap;">
+
+    <input
+        type="text"
+        name="keyword"
+        placeholder="Search by title or company"
+        value="{{ keyword }}"
+        style="padding:8px; width:250px;"
+    >
+
+    <select name="status" style="padding:8px;">
+        <option value="">All Status</option>
+        <option value="Applied" {{ "selected" if status=="Applied" else "" }}>Applied</option>
+        <option value="Interview" {{ "selected" if status=="Interview" else "" }}>Interview</option>
+        <option value="Rejected" {{ "selected" if status=="Rejected" else "" }}>Rejected</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<!-- ================= JOB LIST ================= -->
+{% for job in jobs %}
+<div class="card">
+
+    <!-- TITLE -->
+    <h3>{{ job.title }}</h3>
+
+    <!-- COMPANY -->
+    <p><strong>Company:</strong> {{ job.company }}</p>
+
+    <!-- SCORE BADGE -->
+    {% if job.score >= 70 %}
+        <span class="badge badge-green">
+            Recommended · {{ job.score }}%
+        </span>
+    {% elif job.score >= 40 %}
+        <span class="badge badge-yellow">
+            Medium Match · {{ job.score }}%
+        </span>
+    {% else %}
+        <span class="badge badge-red">
+            Low Match · {{ job.score }}%
+        </span>
+    {% endif %}
+
+    <br><br>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+        <a href="{{ job.link or job.url }}" target="_blank" class="btn btn-outline">
+            Apply
+        </a>
+
+        <button
+            type="button"
+            class="btn btn-danger"
+            onclick="openDeleteModal( {{job.id}} )"
+        >
+            Delete
+        </button>
+    </div>
+
+</div>
+
+{% else %}
+<p>No applications found.</p>
+{% endfor %}
+
+{% endblock %}
